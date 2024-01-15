@@ -45,9 +45,12 @@ console.log(name[0]);
 
 const searchMessage = () => {
       const val = messageSearch.value.toLowerCase();
+      
       console.log(val);
       message.forEach( chat => {
-            let name = chat.querySelectorAll('.frind').textContent.toLowerCase();
+             let name = chat.querySelector('h5').textContent.toLowerCase();
+            //let name= [chat.frind.innerHTML.toLowerCase()];
+            console.log(name)
             if(name.indexOf(val)!=-1){
                   chat.style.display='flex';
             }else{
@@ -137,7 +140,7 @@ fontSizes.forEach( size => {
 //change primary colors
 colorPalette.forEach(color => {
       color.addEventListener('click' , () =>{
-            let primary;
+            let primaryHue;
             changeActiveClassColor();
             if(color.classList.contains('color-1')){
               primaryHue = 252;
